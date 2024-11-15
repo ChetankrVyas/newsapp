@@ -1,3 +1,5 @@
+import './App.css';
+
 import React, { useState } from 'react'
 import NavBar from './components/NavBar';
 import News from './components/News';
@@ -12,10 +14,10 @@ const App = () => {
   return (
     <div>
       <Router>
-        <NavBar />
-        <LoadingBar color='#f11946' height={3} progress={progress} />
+      <NavBar />
+      <LoadingBar height={3} color='#f11946' progress={progress}/>
         <Routes>
-          <Route path="/" element={ <News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />}></Route>
+          <Route path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />}></Route>
           <Route path="/business" element = {<News setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country="in" category="business" />}></Route>
           <Route path="/entertainment" element={<News setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country="in" category="entertainment" />}></Route>
           <Route path="/general" element={<News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general" />}></Route>
